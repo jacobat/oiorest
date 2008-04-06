@@ -29,6 +29,8 @@ module ActiveOIO
           ## collection without timestamp
         elsif collection.size ==2
           value = collection.values[0]
+        elsif collection.size == 4
+          value = collection
         end
         if(value.is_a? Array)
           # Assume the value contains an array of elements to create
