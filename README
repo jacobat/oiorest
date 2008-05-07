@@ -1,13 +1,21 @@
 ActiveOio
 =========
 
-Introduction goes here.
+ActiveOIO is a Ruby on Rails ActiveOIO extension to Danish public data.
+
+You can read more about it at http://code.google.com/p/oiorest/
 
 
 Example
 =======
 
-Example goes here.
+# Find all
+Kommune.find(:all)
+
+# Find one
+Postdistrikt.find(8830)
+
+# Search by name
+Postdistrikt.find_by_name('borg')
 
 
-Copyright (c) 2008 [name of plugin creator], released under the MIT license
