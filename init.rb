@@ -9,9 +9,6 @@ require "models/sogn"
 require "models/valgdistrikt"
 
 
-
-
-
 ## Inflections for OIO
 Inflector.inflections do |inflect|
   inflect.irregular 'kommune', 'kommuner'
