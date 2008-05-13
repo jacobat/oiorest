@@ -19,3 +19,7 @@ Postdistrikt.find(8830)
 Postdistrikt.find_by_name('borg')
 
 
+TODO
+========
+* lokaliteter => make drill down to full-address level
+* 
