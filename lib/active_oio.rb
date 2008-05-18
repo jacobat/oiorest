@@ -3,11 +3,35 @@ require 'activeresource'
 
 module ActiveOIO
   class Base < ActiveResource::Base
+
+
+
+
     self.site = 'http://oiorest.dk/danmark/'
 
-    #self.logger = Logger.new(STDOUT)
+#    self.logger = Logger.new(STDOUT)
+    self.logger = Logger.new('log/oiorest.log', 0, 10000000)
+
+
+
+
 
     class << self
+
+
+
+      def find(*arguments)
+        scope   = arguments.slice!(0)
+        options = arguments.slice!(0) || {}
+
+        case scope
+          when :all   then find_every(options)
+          when :first then find(find_every(options).first.to_param)
+          when :one   then find_one(options)
+          else             find_single(scope, options)
+        end
+      end
+
 
       ## remove .xml from the url
       def element_path(id, prefix_options = {}, query_options = nil)

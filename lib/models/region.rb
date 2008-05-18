@@ -9,5 +9,9 @@ class Region < ActiveOIO::Base
       end
       self.attributes['kommuner']
   end
+  
+  def to_param
+    self.attributes['nr']
+  end
 
 end

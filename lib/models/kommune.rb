@@ -36,4 +36,8 @@ class Kommune < ActiveOIO::Base
     end
     self.attributes['skoledistrikter']
   end
+  
+  def to_param
+    self.attributes['nr']
+  end
 end

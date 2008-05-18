@@ -29,4 +29,9 @@ class Skole < ActiveOIO::Base
       newSd
     end
   end
+  
+  def to_param
+    self.attributes['institutionsnr']
+  end
+  
 end

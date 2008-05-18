@@ -18,8 +18,23 @@ Postdistrikt.find(8830)
 # Search by name
 Postdistrikt.find_by_name('borg')
 
+# Adresser
+
+# This is a finder with all possible search params.
+# returns an Address-light, with a reduced subset of the full Adresse.
+Adresse.find(:all, :params => {:vejnavn => "lyongade", :husnr => "19", :postnr => "2300", :vejnr => "4492", :kommunenr => "101", :sognenr => "7084"})
+
+# direct access
+ Adresse.find(9718)
+
+# find the first hit -- fully expanded address object
+Adresse.find(:first,:params => {:vejnavn => "lyongade", :husnr => "19"})
+
+
 
 TODO
 ========
 * lokaliteter => make drill down to full-address level
-* 
+* Unittests against stubbed responses. Should we hack Active Resource to do that?
+* Integration tests against oiorest.dk/danmark
+* Script to port github commits into subversion on Google Code

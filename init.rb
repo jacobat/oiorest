@@ -1,4 +1,7 @@
 # Include hook code here
+
+# TODO: autorequire all models
+require "models/adresse"
 require "models/kommune"
 require "models/lokalitet"
 require "models/postdistrikt"
@@ -7,7 +10,6 @@ require "models/skole"
 require "models/skoledistrikt"
 require "models/sogn"
 require "models/valgdistrikt"
-
 
 ## Inflections for OIO
 Inflector.inflections do |inflect|
@@ -19,4 +21,5 @@ Inflector.inflections do |inflect|
   inflect.irregular 'skoledistrikt', 'skoledistrikter'
   inflect.irregular 'sogn', 'sogne'
   inflect.irregular 'valgdistrikt', 'valgdistrikter'
+  inflect.irregular 'adresse', 'adresser'
 end
